@@ -13,7 +13,7 @@ export default {
   },
   methods:{
     reduce(){
-      this.$store.commit('reduce')
+      this.$store.commit('reduce',4)
     }
   }
 }

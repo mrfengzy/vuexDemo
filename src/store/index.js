@@ -7,11 +7,11 @@ export default new Vuex.Store({
     count:0
   },
   mutations: {
-    add(state){
-      state.count += 1
+    add(state, step){
+      state.count += step
     },
-    reduce(state) {
-      state.count -= 1
+    reduce(state,step) {
+      state.count -= step
     }
   },
   actions: {
