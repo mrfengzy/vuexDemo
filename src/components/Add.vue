@@ -18,7 +18,7 @@ export default {
   methods:{
     ...mapMutations(['add']),
     adda(){
-      this.add(3)
+      this.$store.dispatch('addAsync',3)
     }
    
   }

@@ -15,6 +15,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    addAsync(context,step){
+      setTimeout(()=>{
+        context.commit('add', step)
+      },1000)
+    }
   },
   modules: {
     
