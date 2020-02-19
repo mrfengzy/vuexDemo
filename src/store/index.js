@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -8,11 +7,11 @@ export default new Vuex.Store({
     count:0
   },
   mutations: {
-    add(){
-      this.count += 1
+    add(state){
+      state.count += 1
     },
-    reduce() {
-      this.count -= 1
+    reduce(state) {
+      state.count -= 1
     }
   },
   actions: {

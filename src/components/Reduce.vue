@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3>当前最新的count值为：{{this.$store.state.count}}</h3>
-    <button>-1</button>
+    <h3>当前最新的count值为：{{$store.state.count}}</h3>
+    <button @click="reduce">-1</button>
   </div>
 </template>
 <script>
@@ -9,6 +9,11 @@ export default {
   data(){
     return{
 
+    }
+  },
+  methods:{
+    reduce(){
+      this.$store.commit('reduce')
     }
   }
 }
