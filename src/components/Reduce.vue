@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h3>当前最新的count值为：{{$store.state.count}}</h3>
+    <h3>{{showNum}}</h3>
     <button @click="reduce">-1</button>
   </div>
 </template>
 <script>
+import {mapGetters} from 'vuex'
 export default {
   data(){
     return{
@@ -15,6 +16,9 @@ export default {
     reduce(){
       this.$store.commit('reduce',4)
     }
+  },
+  computed:{
+    ...mapGetters(['showNum'])
   }
 }
 </script>

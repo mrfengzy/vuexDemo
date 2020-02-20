@@ -12,6 +12,9 @@ export default new Vuex.Store({
     },
     reduce(state,step) {
       state.count -= step
+    },
+    add2(state,step){
+      state.count += step
     }
   },
   actions: {
@@ -19,12 +22,19 @@ export default new Vuex.Store({
       setTimeout(()=>{
         context.commit('add', step)
       },1000)
+    },
+    addAsync2(context,step){
+      setTimeout(()=>{
+        context.commit('add2',step)
+      },1000)
     }
   },
   modules: {
     
   },
   getters:{
-    
+    showNum(state){
+      return `当前最新的数量是${state.count}`
+    }
   }
 }) 

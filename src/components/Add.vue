@@ -1,11 +1,12 @@
 <template>
   <div>
-    <h3>当前最新的count值为：{{count}}</h3>
+    <h3>{{$store.getters.showNum}}</h3>
     <button @click="adda">+1</button>
+    <button @click="add2">+2</button>
   </div>
 </template>
 <script>
-import {mapState,mapMutations} from 'vuex'
+import {mapState,mapMutations,mapActions} from 'vuex'
 export default {
   data(){
     return{
@@ -16,9 +17,13 @@ export default {
     ...mapState(['count'])
   },
   methods:{
+    ...mapActions(['addAsync2']),
     ...mapMutations(['add']),
     adda(){
       this.$store.dispatch('addAsync',3)
+    },
+    add2(){
+      this.addAsync2(2)
     }
    
   }
