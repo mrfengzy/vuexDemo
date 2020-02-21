@@ -73,9 +73,9 @@ export default new Vuex.Store({
       if(state.type === 'all'){
         return state.list
       } else if (state.type === 'unDone'){
-        return state.list.filter(x => x.done === true)
-      }else{
         return state.list.filter(x => x.done === false)
+      }else{
+        return state.list.filter(x => x.done === true)
       }
     }
   }
