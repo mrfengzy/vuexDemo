@@ -35,7 +35,7 @@ export default new Vuex.Store({
     changeStatus(state,params){
       const i = state.list.findIndex(x => x.id === params.id)
       if(i !== -1){
-        state.list[i].done = params
+        state.list[i].done = params.status
       }
     },
     clearFinish(state,type){
